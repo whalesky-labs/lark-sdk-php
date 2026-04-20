@@ -152,6 +152,44 @@ $client->im()->message()->create($payload);
 composer require lark-sdk-php/lark-sdk-php
 ```
 
+## 当前进度
+
+目前已实现：
+
+- Core 配置
+- 基于 PSR 的 HTTP 请求链路
+- 响应解析
+- 统一异常模型
+- `app_access_token` 与 `tenant_access_token` 接口封装
+
+更多 OpenAPI 模块会按阶段继续补充。
+
+## 快速开始
+
+```php
+use Lark\Core\Config;
+use Lark\LarkClient;
+use GuzzleHttp\Client as GuzzleClient;
+use Nyholm\Psr7\Factory\Psr17Factory;
+
+$psr18Client = new GuzzleClient();
+$factory = new Psr17Factory();
+
+$client = new LarkClient(
+    new Config(
+        appId: 'your_app_id',
+        appSecret: 'your_app_secret'
+    ),
+    $psr18Client,
+    $factory,
+    $factory
+);
+
+$result = $client->auth()->tenantAccessToken()->create();
+```
+
+可运行示例见 `examples/get-tenant-access-token.php`。
+
 ## 开源协议
 
 本项目基于 [MIT](LICENSE) 协议开源。

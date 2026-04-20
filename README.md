@@ -152,6 +152,44 @@ After the first release, it will be installable with Composer:
 composer require lark-sdk-php/lark-sdk-php
 ```
 
+## Current Status
+
+The current implementation includes:
+
+- Core configuration
+- PSR-based HTTP request pipeline
+- Response decoding
+- Unified exceptions
+- `app_access_token` and `tenant_access_token` API wrappers
+
+More OpenAPI modules will be added step by step.
+
+## Quick Start
+
+```php
+use Lark\Core\Config;
+use Lark\LarkClient;
+use GuzzleHttp\Client as GuzzleClient;
+use Nyholm\Psr7\Factory\Psr17Factory;
+
+$psr18Client = new GuzzleClient();
+$factory = new Psr17Factory();
+
+$client = new LarkClient(
+    new Config(
+        appId: 'your_app_id',
+        appSecret: 'your_app_secret'
+    ),
+    $psr18Client,
+    $factory,
+    $factory
+);
+
+$result = $client->auth()->tenantAccessToken()->create();
+```
+
+See `examples/get-tenant-access-token.php` for a runnable example.
+
 ## License
 
 This project is open-sourced software licensed under the [MIT license](LICENSE).

@@ -1,0 +1,42 @@
+{
+    "name": "whalesky-labs/lark-sdk-php",
+    "description": "A lightweight, framework-agnostic PHP SDK for Lark OpenAPI.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "lark",
+        "feishu",
+        "sdk",
+        "php",
+        "openapi"
+    ],
+    "require": {
+        "php": "^8.1",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.1 || ^2.0"
+    },
+    "require-dev": {
+        "nyholm/psr7": "^1.8",
+        "phpunit/phpunit": "^10.5"
+    },
+    "suggest": {
+        "guzzlehttp/guzzle": "Use Guzzle as a PSR-18 HTTP client implementation.",
+        "nyholm/psr7": "Use Nyholm PSR-7 as a PSR-17 request/stream factory implementation."
+    },
+    "autoload": {
+        "psr-4": {
+            "Lark\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lark\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
