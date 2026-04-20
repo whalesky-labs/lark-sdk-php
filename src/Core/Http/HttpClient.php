@@ -2,10 +2,19 @@
 
 declare(strict_types=1);
 
+/**
+ * This file is part of Lark SDK for PHP.
+ *
+ * @link     https://github.com/whalesky-labs/lark-sdk-php
+ * @document https://github.com/whalesky-labs/lark-sdk-php
+ * @contact  westng
+ * @license  https://github.com/whalesky-labs/lark-sdk-php/blob/main/LICENSE
+ */
+
 namespace Lark\Core\Http;
 
-use Lark\Core\Response\ResponseDecoder;
 use Lark\Core\Exception\HttpException;
+use Lark\Core\Response\ResponseDecoder;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 
@@ -20,6 +29,7 @@ final class HttpClient
 
     /**
      * @param array<string, mixed> $options
+     *
      * @return array<string, mixed>
      */
     public function request(string $method, string $path, array $options = [], ?string $accessToken = null): array

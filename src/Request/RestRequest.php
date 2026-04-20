@@ -2,6 +2,15 @@
 
 declare(strict_types=1);
 
+/**
+ * This file is part of Lark SDK for PHP.
+ *
+ * @link     https://github.com/whalesky-labs/lark-sdk-php
+ * @document https://github.com/whalesky-labs/lark-sdk-php
+ * @contact  westng
+ * @license  https://github.com/whalesky-labs/lark-sdk-php/blob/main/LICENSE
+ */
+
 namespace Lark\Request;
 
 abstract class RestRequest
@@ -15,9 +24,7 @@ abstract class RestRequest
      */
     protected array $headers = [];
 
-    /**
-     * @param array<string, mixed> $pathParams
-     */
+    /** @param array<string, mixed> $pathParams */
     public function apiUri(array $pathParams = []): string
     {
         $uri = $this->apiUri;
@@ -34,9 +41,7 @@ abstract class RestRequest
         return $this->httpMethod;
     }
 
-    /**
-     * @return array<string, string>
-     */
+    /** @return array<string, string> */
     public function headers(): array
     {
         return $this->headers;
@@ -45,6 +50,7 @@ abstract class RestRequest
     /**
      * @param array<string, mixed> $query
      * @param array<string, mixed> $payload
+     *
      * @return array<string, mixed>
      */
     public function requestOptions(array $query = [], array $payload = []): array

@@ -2,6 +2,15 @@
 
 declare(strict_types=1);
 
+/**
+ * This file is part of Lark SDK for PHP.
+ *
+ * @link     https://github.com/whalesky-labs/lark-sdk-php
+ * @document https://github.com/whalesky-labs/lark-sdk-php
+ * @contact  westng
+ * @license  https://github.com/whalesky-labs/lark-sdk-php/blob/main/LICENSE
+ */
+
 namespace Lark\Core\Http;
 
 use Lark\Core\Config;
@@ -19,9 +28,7 @@ final class RequestBuilder
     ) {
     }
 
-    /**
-     * @param array<string, mixed> $options
-     */
+    /** @param array<string, mixed> $options */
     public function build(string $method, string $path, array $options = [], ?string $accessToken = null): RequestInterface
     {
         $uri = $this->buildUri($path, $options['query'] ?? []);
@@ -71,9 +78,7 @@ final class RequestBuilder
         return $request;
     }
 
-    /**
-     * @param array<string, mixed> $query
-     */
+    /** @param array<string, mixed> $query */
     private function buildUri(string $path, array $query): string
     {
         $uri = sprintf('%s/%s', $this->config->baseUri(), ltrim($path, '/'));
@@ -87,6 +92,7 @@ final class RequestBuilder
 
     /**
      * @param array<int|string, mixed> $headers
+     *
      * @return array<string, string>
      */
     private function normalizeHeaders(array $headers): array
@@ -111,6 +117,7 @@ final class RequestBuilder
 
     /**
      * @param array<int, array<string, mixed>> $parts
+     *
      * @return array{0: string, 1: string}
      */
     private function buildMultipartBody(array $parts): array
