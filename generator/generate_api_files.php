@@ -144,7 +144,7 @@ function extractApiDefinition(string $html, string $sourceUrl): ?array
         $path = '/open-apis' . $path;
     }
 
-    $docUrl = matchFirst($html, '/https:\/\/open\.feishu\.cn\/document\/[^"\\\\<\s]+/u');
+    $docUrl = matchFirst($html, '/(?<value>https:\/\/open\.feishu\.cn\/document\/[^"\\\\<\s]+)/u');
     $headers = [];
 
     if (str_contains($html, 'Content-Type') && str_contains($html, 'application/json; charset=utf-8')) {
