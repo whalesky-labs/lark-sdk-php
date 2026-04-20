@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lark\Auth;
 
-use Lark\Api\Auth\AccessToken\AuthV3AppAccessTokenInternal;
+use Lark\Api\Auth\AppAccessToken\AuthV3AppAccessTokenInternal;
 use Lark\LarkClient;
 
 final class AppAccessTokenResource

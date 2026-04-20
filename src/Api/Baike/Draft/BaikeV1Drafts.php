@@ -1,0 +1,23 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Lark\Api\Baike\Draft;
+
+use Lark\Request\RestRequest;
+
+/**
+ * 创建草稿
+ *
+ * @see https://feishu.apifox.cn/api-11315386
+ */
+final class BaikeV1Drafts extends RestRequest
+{
+    protected string $apiUri = '/open-apis/baike/v1/drafts';
+
+    protected string $httpMethod = 'POST';
+
+    protected array $headers = [
+        'Content-Type' => 'application/json; charset=utf-8',
+    ];
+}

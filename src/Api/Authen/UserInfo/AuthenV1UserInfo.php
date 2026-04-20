@@ -18,6 +18,6 @@ final class AuthenV1UserInfo extends RestRequest
     protected string $httpMethod = 'GET';
 
     protected array $headers = [
-        'Content-Type' => 'application/json',
+        'Content-Type' => 'application/json; charset=utf-8',
     ];
 }
