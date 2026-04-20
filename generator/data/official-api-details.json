@@ -1,0 +1,131 @@
+{
+    "generated_at": "2026-04-20T13:20:26+00:00",
+    "source_index": "/Users/west/lark-sdk-php/generator/data/official-api-index.json",
+    "count": 3,
+    "items": [
+        {
+            "name": "自建应用获取 tenant_access_token",
+            "method": "POST",
+            "path": "/open-apis/auth/v3/tenant_access_token/internal",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal",
+            "markdown_url": "https://open.feishu.cn/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal.md",
+            "http_url": "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal",
+            "http_method": "POST",
+            "request_headers": [
+                {
+                    "name": "Content-Type",
+                    "type": "string",
+                    "required": "是",
+                    "description": "**固定值**：\"application/json; charset=utf-8\""
+                }
+            ],
+            "query_parameters": [],
+            "body_parameters": [
+                {
+                    "name": "app_id",
+                    "type": "string",
+                    "required": "是",
+                    "description": "应用唯一标识，创建应用后获得。有关`app_id` 的详细介绍。请参考[通用参数](https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)介绍<br>**示例值：** \"cli_slkdjalasdkjasd\""
+                },
+                {
+                    "name": "app_secret",
+                    "type": "string",
+                    "required": "是",
+                    "description": "应用秘钥，创建应用后获得。有关 `app_secret` 的详细介绍，请参考[通用参数](https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)介绍<br>**示例值：** \"dskLLdkasdjlasdKK\""
+                }
+            ],
+            "raw_markdown_excerpt": "# 自建应用获取 tenant_access_token 自建应用通过此接口获取 `tenant_access_token`。 ## 注意事项 `tenant_access_token` 的最大有效期是 2 小时。 - 剩余有效期小于 30 分钟时，调用本接口会返回一个新的 `tenant_access_token`，这会同时存在两个有效的 `tenant_access_token`。 - 剩余有效期大于等于 30 分钟时，调用本接口会返回原有的 `tenant_access_token`。 ## 请求 基本 | &nbsp; ---|--- HTTP URL | https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal HTTP Method | POST 支持的应用类型 | Custom App 权限要求<br>**调用该 API 所需的权限。开启其中任意一项权限即可调用** | 无 ### 请求头 名称 | 类型 | 必填 | 描述 ---|---|---|--- Content-Type | st..."
+        },
+        {
+            "name": "自建应用获取 app_access_token",
+            "method": "POST",
+            "path": "/open-apis/auth/v3/app_access_token/internal",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/app_access_token_internal",
+            "markdown_url": "https://open.feishu.cn/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/app_access_token_internal.md",
+            "http_url": "https://open.feishu.cn/open-apis/auth/v3/app_access_token/internal",
+            "http_method": "POST",
+            "request_headers": [
+                {
+                    "name": "Content-Type",
+                    "type": "string",
+                    "required": "是",
+                    "description": "**固定值**：\"application/json; charset=utf-8\""
+                }
+            ],
+            "query_parameters": [],
+            "body_parameters": [
+                {
+                    "name": "app_id",
+                    "type": "string",
+                    "required": "是",
+                    "description": "应用唯一标识，创建应用后获得。有关`app_id` 的详细介绍。请参考[通用参数](https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)介绍<br>**示例值：** \"cli_slkdjalasdkjasd\""
+                },
+                {
+                    "name": "app_secret",
+                    "type": "string",
+                    "required": "是",
+                    "description": "应用秘钥，创建应用后获得。有关 `app_secret` 的详细介绍，请参考[通用参数](https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)介绍<br>**示例值：** \"dskLLdkasdjlasdKK\""
+                }
+            ],
+            "raw_markdown_excerpt": "# 自建应用获取 app_access_token 自建应用通过此接口获取`app_access_token`。 **说明：** `app_access_token` 的最大有效期是 2 小时。 - 如果在有效期小于 30 分钟的情况下，调用本接口，会返回一个新的 `app_access_token`，这会同时存在两个有效的 `app_access_token`。 - 如果在有效期大于等于 30 分钟的情况下，调用本接口，会返回原有的 `app_access_token`。 ## 请求 基本 | &nbsp; ---|--- HTTP URL | https://open.feishu.cn/open-apis/auth/v3/app_access_token/internal HTTP Method | POST 支持的应用类型 | Custom App 权限要求<br>**调用该 API 所需的权限。开启其中任意一项权限即可调用** | 无 ### 请求头 名称 | 类型 | 必填 | 描述 ---|---|---|--- Content-Type | string | 是 | *..."
+        },
+        {
+            "name": "发送消息",
+            "method": "POST",
+            "path": "/open-apis/im/v1/messages",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create",
+            "markdown_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create.md",
+            "http_url": "https://open.feishu.cn/open-apis/im/v1/messages",
+            "http_method": "POST",
+            "request_headers": [
+                {
+                    "name": "Authorization",
+                    "type": "string",
+                    "required": "是",
+                    "description": "`tenant_access_token`<br>或<br>`user_access_token`<br>**值格式**：\"Bearer `access_token`\"<br>**示例值**：\"Bearer u-7f1bcd13fc57d46bac21793a18e560\"<br>[了解更多：如何选择与获取 access token](https://open.feishu.cn/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)"
+                },
+                {
+                    "name": "Content-Type",
+                    "type": "string",
+                    "required": "是",
+                    "description": "**固定值**：\"application/json; charset=utf-8\""
+                }
+            ],
+            "query_parameters": [
+                {
+                    "name": "receive_id_type",
+                    "type": "string",
+                    "required": "是",
+                    "description": "消息接收者 ID 类型。支持 open_id/union_id/user_id/email/chat_id<br>**示例值**：open_id<br>**可选值有**：<br>- open_id：标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.feishu.cn/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)<br>- union_id：标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.feishu.cn/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)<br>- user_id：标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](https://open.feishu.cn/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)。<br>- email：以用户的真实邮箱来标识用户。<br>- chat_id：以群 ID 来标识群聊。[了解更多：如何获取群 ID ](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description)<br>**当值为 `user_id`，字段权限要求**：<br>获取用户 user ID(contact:user.employee_id:readonly)"
+                }
+            ],
+            "body_parameters": [
+                {
+                    "name": "receive_id",
+                    "type": "string",
+                    "required": "是",
+                    "description": "消息接收者的 ID，ID 类型与查询参数 `receive_id_type` 的取值一致。<br>**注意事项**：<br>- 给用户发送消息时，用户需要在机器人的[可用范围](https://open.feishu.cn/document/home/introduction-to-scope-and-authorization/availability)内。例如，你需要给企业全员发送消息，则需要将应用的可用范围设置为全体员工。<br>- 给群组发送消息时，机器人需要在该群组中，且在群组内拥有发言权限。<br>- 如果消息接收者为用户，推荐使用用户的 `open_id`。<br>**示例值**：\"ou_7d8a6e6df7621556ce0d21922b676706ccs\""
+                },
+                {
+                    "name": "msg_type",
+                    "type": "string",
+                    "required": "是",
+                    "description": "消息类型。<br>**可选值有**：<br>- text：文本<br>- post：富文本<br>- image：图片<br>- file：文件<br>- audio：语音<br>- media：视频<br>- sticker：表情包<br>- interactive：卡片<br>- share_chat：分享群名片（被分享的群名片有效期为 7 天）<br>- share_user：分享个人名片<br>- system：系统消息。该类型仅支持在机器人单聊内推送系统消息，不支持在群聊内使用，例如下图所示突出新会话。<br>![image.png](//sf3-cn.feishucdn.com/obj/open-platform-opendoc/e7ed7bb87180295d347fa58d76b077f5_lw9oqM4Cot.png)<br>不同消息类型的详细介绍，参见[发送消息内容](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/im-v1/message/create_json)。<br>**示例值**：\"text\""
+                },
+                {
+                    "name": "content",
+                    "type": "string",
+                    "required": "是",
+                    "description": "消息内容，JSON 结构序列化后的字符串。该参数的取值与 `msg_type` 对应，例如 `msg_type` 取值为 `text`，则该参数需要传入文本类型的内容。<br>**注意：**<br>- JSON 字符串需进行转义。例如，换行符 `\\n` 转义后为 `\\\\n`。<br>- 文本消息请求体最大不能超过 150 KB。<br>- 卡片消息、富文本消息请求体最大不能超过 30 KB。<br>- 如果使用卡片模板（template_id）发送消息，实际大小也包含模板对应的卡片数据大小。<br>- 如果消息中包含样式标签，会使实际消息体长度大于您输入的请求体长度。<br>- 图片需要先[上传图片](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)，然后使用图片的 Key 发消息。<br>- 音频、视频、文件需要先[上传文件](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/create)，然后使用文件的 Key 发消息。注意不能使用云文档[上传素材](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)接口返回的 file_token。<br>了解不同类型的消息内容格式、使用限制，可参见[发送消息内容](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/im-v1/message/create_json)。<br>**示例值**：\"{\\\"text\\\":\\\"test content\\\"}\""
+                },
+                {
+                    "name": "uuid",
+                    "type": "string",
+                    "required": "否",
+                    "description": "自定义设置的唯一字符串序列，用于在发送消息时请求去重。持有相同 uuid 的请求，在 1 小时内至多成功发送一条消息。<br>**注意**：你可以参考示例值自定义参数值。当发送不同的消息内容时，如果传入了该参数，则需要在每次请求时都更换该参数的取值。<br>**示例值**：\"选填，每次调用前请更换，如a0d69e20-1dd1-458b-k525-dfeca4015204\"<br>**数据校验规则**：<br>- 最大长度：`50` 字符"
+                }
+            ],
+            "raw_markdown_excerpt": "# 发送消息 调用该接口向指定用户或者群聊发送消息。支持发送的消息类型包括文本、富文本、卡片、群名片、个人名片、图片、视频、音频、文件以及表情包等。 ## 前提条件 - 应用需要开启[机器人能力](https://open.feishu.cn/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 开启能力后需要发布版本才能生效，参考 [发布应用](https://open.feishu.cn/document/home/introduction-to-custom-app-development/self-built-application-development-process#baf09c7d)。 - 给用户发送消息时，用户需要在机器人的[可用范围](https://open.feishu.cn/document/home/introduction-to-scope-and-authorization/availability)内。 - 给群组发送消息时，机器人需要在该..."
+        }
+    ]
+}

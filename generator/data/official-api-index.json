@@ -1,0 +1,367 @@
+{
+    "generated_at": "2026-04-20T13:08:43+00:00",
+    "source": "https://feishu.apifox.cn/doc-1939273",
+    "count": 45,
+    "items": [
+        {
+            "name": "获取百科分类",
+            "method": "GET",
+            "path": "/open-apis/baike/v1/classifications",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/classification/list",
+            "description": "获取企业百科当前分类。 企业百科目前为二级分类体系，每个词条可添加多个二级分类，但每个一级分类下只能添加一个分类。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "提取潜在的百科词条",
+            "method": "POST",
+            "path": "/open-apis/baike/v1/entities/extract",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/entity/extract",
+            "description": "提取文本中可能成为百科词条的词语，且不会过滤已经成为百科词条的词语。同时，会返回推荐的别名。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "词条高亮",
+            "method": "POST",
+            "path": "/open-apis/baike/v1/entities/highlight",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/entity/highlight",
+            "description": "传入一句话，智能识别句中对应的词条，并返回词条位置和 entity_id，可在外部系统中快速实现百科词条智能高亮。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "模糊搜索词条",
+            "method": "POST",
+            "path": "/open-apis/baike/v1/entities/search",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/entity/search",
+            "description": "传入关键词，与词条名、别名、释义等信息进行模糊匹配，返回搜到的词条信息。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "下载图片",
+            "method": "GET",
+            "path": "/open-apis/baike/v1/files/:file_token/download",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/file/download",
+            "description": "通过 file_token 下载原图片。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "上传图片",
+            "method": "POST",
+            "path": "/open-apis/baike/v1/files/upload",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/file/upload",
+            "description": "百科词条图片资源上传。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "拉用户进群",
+            "method": "POST",
+            "path": "/open-apis/chat/v4/chatter/add/",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/ucTO5QjL3kTO04yN5kDN",
+            "description": "机器人拉用户进群。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "新增部门",
+            "method": "POST",
+            "path": "/open-apis/contact/v1/department/add",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uYzNz4iN3MjL2czM",
+            "description": "向通讯录中增加新的部门。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "删除部门",
+            "method": "POST",
+            "path": "/open-apis/contact/v1/department/delete",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/ugzNz4CO3MjL4czM",
+            "description": "从通讯录中删除部门。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "批量获取部门详情",
+            "method": "GET",
+            "path": "/open-apis/contact/v1/department/detail/batch_get",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uczN3QjL3czN04yN3cDN",
+            "description": "批量获取部门详情，只返回权限范围内的部门。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取部门详情",
+            "method": "GET",
+            "path": "/open-apis/contact/v1/department/info/get",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uAzNz4CM3MjLwczM",
+            "description": "获取部门详情信息。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取子部门 ID 列表",
+            "method": "GET",
+            "path": "/open-apis/contact/v1/department/list",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/ukjNz4SO2MjL5YzM",
+            "description": "获取子部门 ID 列表，只返回授权的部门列表。 企业根部门 ID 为 0，当参数指定的部门为根部门时，如果授权范围为全员，返回该企业的所有一级部门；否则返回管理员在设置通讯录授权范围时勾选的部门（不包含子部门）。指定获取特定部门（部门 ID 非 0）的部门列表时，需要具有该部门的通讯录授权，返回部门列表为该部门所有的子部门。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取子部门列表",
+            "method": "GET",
+            "path": "/open-apis/contact/v1/department/simple/list",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/ugzN3QjL4czN04CO3cDN",
+            "description": "获取当前部门子部门列表。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "更新部门信息",
+            "method": "POST",
+            "path": "/open-apis/contact/v1/department/update",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uczNz4yN3MjL3czM",
+            "description": "更新通讯录中部门的信息。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取部门用户详情",
+            "method": "GET",
+            "path": "/open-apis/contact/v1/department/user/detail/list",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uYzN3QjL2czN04iN3cDN",
+            "description": "获取部门用户详情信息。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取部门用户列表",
+            "method": "GET",
+            "path": "/open-apis/contact/v1/department/user/list",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uEzNz4SM3MjLxczM",
+            "description": "获取部门用户列表。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取通讯录授权范围",
+            "method": "GET",
+            "path": "/open-apis/contact/v1/scope/get",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/ugjNz4CO2MjL4YzM",
+            "description": "获取应用被授权可访问的通讯录范围，包括可访问的部门列表及用户列表。授权范围为全员时，返回的部门列表为该企业所有的一级部门；否则返回的部门为管理员在设置授权范围时勾选的部门（不包含勾选部门的子部门）。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取企业自定义用户属性配置",
+            "method": "GET",
+            "path": "/open-apis/contact/v1/tenant/custom_attr/get",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/ucTN3QjL3UzN04yN1cDN",
+            "description": "获取企业配置的自定义用户属性。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "新增用户",
+            "method": "POST",
+            "path": "/open-apis/contact/v1/user/add",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzNz4yM3MjLzczM",
+            "description": "向通讯录中新增用户。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "批量获取用户信息",
+            "method": "GET",
+            "path": "/open-apis/contact/v1/user/batch_get",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uIzNz4iM3MjLyczM",
+            "description": "批量获取用户详细信息。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "删除用户",
+            "method": "POST",
+            "path": "/open-apis/contact/v1/user/delete",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uUzNz4SN3MjL1czM",
+            "description": "从通讯录中删除用户。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "更新用户信息",
+            "method": "POST",
+            "path": "/open-apis/contact/v1/user/update",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uQzNz4CN3MjL0czM",
+            "description": "更新通讯录中用户信息。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "批量新增部门",
+            "method": "POST",
+            "path": "/open-apis/contact/v2/department/batch_add",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uMDOwUjLzgDM14yM4ATN",
+            "description": "向通讯录中批量新增多个部门。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取角色列表",
+            "method": "GET",
+            "path": "/open-apis/contact/v2/role/list",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uYzMwUjL2MDM14iNzATN",
+            "description": "获取企业的用户角色列表。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取角色成员列表",
+            "method": "GET",
+            "path": "/open-apis/contact/v2/role/members",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uczMwUjL3MDM14yNzATN",
+            "description": "获取角色下的用户列表。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "查询批量任务执行状态",
+            "method": "GET",
+            "path": "/open-apis/contact/v2/task/get",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uUDOwUjL1gDM14SN4ATN",
+            "description": "查询通讯录异步任务当前的执行状态以及执行结果。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "批量新增用户",
+            "method": "POST",
+            "path": "/open-apis/contact/v2/user/batch_add",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uIDOwUjLygDM14iM4ATN",
+            "description": "向通讯录中批量新增多个用户。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取部门信息列表",
+            "method": "GET",
+            "path": "/open-apis/contact/v3/departments",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/list",
+            "description": "该接口用于获取当前部门子部门列表。[常见问题答疑](https://open.feishu.cn/document/ugTN1YjL4UTN24CO1UjN/uQzN1YjL0cTN24CN3UjN)。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取用户列表",
+            "method": "GET",
+            "path": "/open-apis/contact/v3/users",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/list",
+            "description": "基于部门ID获取部门下直属用户列表。[常见问题答疑](https://open.feishu.cn/document/ugTN1YjL4UTN24CO1UjN/uQzN1YjL0cTN24CN3UjN)。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "批量查询员工请假记录",
+            "method": "GET",
+            "path": "/open-apis/corehr/v1/leaves/leave_request_history",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/leave/leave_request_history",
+            "description": "批量获取员工的请假记录数据",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取面试记录列表",
+            "method": "GET",
+            "path": "/open-apis/hire/v1/applications/:application_id/interviews",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/application-interview/list",
+            "description": "根据投递 ID 获取面试记录列表",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取 Offer 申请表详细信息",
+            "method": "GET",
+            "path": "/open-apis/hire/v1/offer_schemas/:offer_schema_id",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/offer_schema/get",
+            "description": "根据 Offer 申请表 ID，获取 Offer 申请表的详细信息",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "上传图片",
+            "method": "POST",
+            "path": "/open-apis/image/v4/put/",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uEDO04SM4QjLxgDN",
+            "description": "上传图片，获取图片的 image_key。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "发送消息卡片",
+            "method": "POST",
+            "path": "/open-apis/message/v4/send/",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uYTNwUjL2UDM14iN1ATN",
+            "description": "给指定用户或者会话发送消息，其中会话包括私聊会话和群会话。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "批量获取脱敏的用户登录信息",
+            "method": "POST",
+            "path": "/open-apis/passport/v1/sessions/query",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/passport-v1/session/query",
+            "description": "该接口用于查询用户的登录信息。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取系统状态",
+            "method": "GET",
+            "path": "/open-apis/personal_settings/v1/system_statuses",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/personal_settings-v1/system_status/list",
+            "description": "获取租户下所有系统状态。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "创建系统状态",
+            "method": "POST",
+            "path": "/open-apis/personal_settings/v1/system_statuses",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/personal_settings-v1/system_status/create",
+            "description": "创建租户维度的系统状态。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "删除系统状态",
+            "method": "DELETE",
+            "path": "/open-apis/personal_settings/v1/system_statuses/:system_status_id",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/personal_settings-v1/system_status/delete",
+            "description": "删除租户维度的系统状态。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "修改系统状态",
+            "method": "PATCH",
+            "path": "/open-apis/personal_settings/v1/system_statuses/:system_status_id",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/personal_settings-v1/system_status/patch",
+            "description": "修改租户维度系统状态。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "批量关闭系统状态",
+            "method": "POST",
+            "path": "/open-apis/personal_settings/v1/system_statuses/:system_status_id/batch_close",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/personal_settings-v1/system_status/batch_close",
+            "description": "批量关闭用户系统状态可用。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "批量开启系统状态",
+            "method": "POST",
+            "path": "/open-apis/personal_settings/v1/system_statuses/:system_status_id/batch_open",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/personal_settings-v1/system_status/batch_open",
+            "description": "批量开启用户系统状态可用。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "搜索用户",
+            "method": "GET",
+            "path": "/open-apis/search/v1/user",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uMTM4UjLzEDO14yMxgTN",
+            "description": "以用户身份搜索其他用户的信息，无法搜索到外部企业或已离职的用户。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "使用手机号或邮箱获取用户 ID",
+            "method": "GET",
+            "path": "/open-apis/user/v1/batch_get_id",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uUzMyUjL1MjM14SNzITN",
+            "description": "根据用户邮箱或手机号查询用户 open_id 和 user_id，支持批量查询。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "使用统一 ID 获取用户 ID",
+            "method": "GET",
+            "path": "/open-apis/user/v1/union_id/batch_get/list",
+            "doc_url": "https://open.feishu.cn/document/ukTMukTMukTM/uUTO5UjL1kTO14SN5kTN",
+            "description": "使用统一 ID 获取用户 ID信息。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        },
+        {
+            "name": "获取认证信息",
+            "method": "GET",
+            "path": "/open-apis/verification/v1/verification",
+            "doc_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/verification-v1/verification/get",
+            "description": "获取企业主体名称、是否认证等信息。",
+            "source": "https://feishu.apifox.cn/doc-1939273"
+        }
+    ]
+}

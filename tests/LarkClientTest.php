@@ -19,7 +19,7 @@ final class LarkClientTest extends TestCase
         $httpClient = new MockHttpClient(function ($request): Response {
             self::assertSame('POST', $request->getMethod());
             self::assertSame('/open-apis/auth/v3/tenant_access_token/internal', $request->getUri()->getPath());
-            self::assertSame('application/json', $request->getHeaderLine('Content-Type'));
+            self::assertSame('application/json; charset=utf-8', $request->getHeaderLine('Content-Type'));
 
             $payload = json_decode((string) $request->getBody(), true, flags: JSON_THROW_ON_ERROR);
 

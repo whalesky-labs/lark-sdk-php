@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Lark\Auth;
 
+use Lark\Api\Auth\AccessToken\AuthV3AppAccessTokenInternal;
 use Lark\LarkClient;
 
 final class AppAccessTokenResource
@@ -19,10 +20,9 @@ final class AppAccessTokenResource
      */
     public function create(array $payload = []): array
     {
-        return $this->client->request(
-            'POST',
-            '/open-apis/auth/v3/app_access_token/internal',
-            ['json' => $this->resolvePayload($payload)]
+        return $this->client->send(
+            new AuthV3AppAccessTokenInternal(),
+            payload: $this->resolvePayload($payload)
         );
     }
 

@@ -9,6 +9,7 @@ use Lark\Core\Config;
 use Lark\Core\Http\HttpClient;
 use Lark\Core\Http\RequestBuilder;
 use Lark\Core\Response\ResponseDecoder;
+use Lark\Request\RestRequest;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
@@ -38,6 +39,34 @@ final class LarkClient
     public function auth(): AuthService
     {
         return new AuthService($this);
+    }
+
+    /**
+     * @param array<string, mixed> $pathParams
+     * @param array<string, mixed> $query
+     * @param array<string, mixed> $payload
+     * @param array<string, mixed> $options
+     * @return array<string, mixed>
+     */
+    public function send(
+        RestRequest $request,
+        array $pathParams = [],
+        array $query = [],
+        array $payload = [],
+        ?string $accessToken = null,
+        array $options = []
+    ): array {
+        $requestOptions = array_replace_recursive(
+            $request->requestOptions($query, $payload),
+            $options
+        );
+
+        return $this->request(
+            $request->httpMethod(),
+            $request->apiUri($pathParams),
+            $requestOptions,
+            $accessToken
+        );
     }
 
     /**
