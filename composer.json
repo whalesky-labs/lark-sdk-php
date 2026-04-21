@@ -39,6 +39,7 @@
     "scripts": {
         "cs-fix": "php-cs-fixer fix --config=.php-cs-fixer.php",
         "cs-check": "php-cs-fixer fix --config=.php-cs-fixer.php --dry-run --diff",
+        "generate:api-mapping": "php scripts/generate-api-mapping-doc.php",
         "test": "php scripts/run-tests-with-report.php",
         "test:unit": "phpunit --testsuite unit",
         "test:integration": "phpunit --testsuite integration",
