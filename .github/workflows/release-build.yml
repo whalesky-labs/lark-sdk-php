@@ -1,0 +1,75 @@
+name: Release Build
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag, for example v1.0.0'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+
+      - uses: ramsey/composer-install@v3
+
+      - name: Resolve release tag
+        id: meta
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            TAG="${{ github.event.inputs.tag }}"
+          else
+            TAG="${GITHUB_REF_NAME}"
+          fi
+
+          if [ -z "$TAG" ]; then
+            echo "Release tag is required." >&2
+            exit 1
+          fi
+
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Check coding style
+        run: composer cs-check
+
+      - name: Run unit tests
+        run: composer test:unit
+
+      - name: Build release notes
+        run: |
+          cat > release-notes.md <<EOF
+          ## Release Notes
+          - Release version: ${{ steps.meta.outputs.tag }}
+          - PHP SDK service and resource accessors generated from OpenAPI metadata
+          - CI and validation tooling updated
+          - Examples and test helpers improved
+
+          ## 更新说明
+          - 发布版本：${{ steps.meta.outputs.tag }}
+          - 基于 OpenAPI 元数据生成 PHP SDK service 与 resource 访问层
+          - 更新 CI 与校验工具链
+          - 改进示例与测试辅助脚本
+          EOF
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.meta.outputs.tag }}
+          body_path: release-notes.md
