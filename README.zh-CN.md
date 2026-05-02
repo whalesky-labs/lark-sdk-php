@@ -160,9 +160,28 @@ composer require lark-sdk-php/lark-sdk-php
 - 基于 PSR 的 HTTP 请求链路
 - 响应解析
 - 统一异常模型
+- 已为现有 OpenAPI 请求类生成 service/resource 访问入口
 - `app_access_token` 与 `tenant_access_token` 接口封装
+- SDK 不接管 token 生命周期，access token 的提供与刷新由调用方负责
 
-更多 OpenAPI 模块会按阶段继续补充。
+现在已经可以按 SDK 形式调用，例如：
+
+```php
+$client->contact()->user()->get(
+    pathParams: ['user_id' => 'ou_xxx'],
+    accessToken: 'tenant_access_token'
+);
+
+$client->im()->message()->create(
+    query: ['receive_id_type' => 'open_id'],
+    payload: [
+        'receive_id' => 'ou_xxx',
+        'msg_type' => 'text',
+        'content' => '{"text":"hello"}',
+    ],
+    accessToken: 'tenant_access_token'
+);
+```
 
 ## 快速开始
 
@@ -185,7 +204,12 @@ $client = new LarkClient(
     $factory
 );
 
-$result = $client->auth()->tenantAccessToken()->create();
+$token = $client->auth()->tenantAccessToken()->create();
+
+$user = $client->contact()->user()->get(
+    pathParams: ['user_id' => 'ou_xxx'],
+    accessToken: $token['tenant_access_token']
+);
 ```
 
 可运行示例见 `examples/get-tenant-access-token.php`。

@@ -36,6 +36,66 @@ final class TestConfigFactory
         return self::nullableEnv('LARK_TEST_ACCESS_TOKEN');
     }
 
+    public static function userId(): ?string
+    {
+        return self::nullableEnv('LARK_TEST_USER_ID');
+    }
+
+    public static function openId(): ?string
+    {
+        return self::nullableEnv('LARK_TEST_OPEN_ID');
+    }
+
+    public static function email(): ?string
+    {
+        return self::nullableEnv('LARK_TEST_EMAIL');
+    }
+
+    public static function mobile(): ?string
+    {
+        return self::nullableEnv('LARK_TEST_MOBILE');
+    }
+
+    public static function departmentId(): ?string
+    {
+        return self::nullableEnv('LARK_TEST_DEPARTMENT_ID');
+    }
+
+    public static function chatId(): ?string
+    {
+        return self::nullableEnv('LARK_TEST_CHAT_ID');
+    }
+
+    public static function messageId(): ?string
+    {
+        return self::nullableEnv('LARK_TEST_MESSAGE_ID');
+    }
+
+    public static function calendarId(): ?string
+    {
+        return self::nullableEnv('LARK_TEST_CALENDAR_ID');
+    }
+
+    public static function fileToken(): ?string
+    {
+        return self::nullableEnv('LARK_TEST_FILE_TOKEN');
+    }
+
+    public static function sheetToken(): ?string
+    {
+        return self::nullableEnv('LARK_TEST_SHEET_TOKEN');
+    }
+
+    public static function docToken(): ?string
+    {
+        return self::nullableEnv('LARK_TEST_DOC_TOKEN');
+    }
+
+    public static function wikiNodeToken(): ?string
+    {
+        return self::nullableEnv('LARK_TEST_WIKI_NODE_TOKEN');
+    }
+
     public static function baseUri(): string
     {
         return self::env('LARK_TEST_BASE_URI', 'https://open.feishu.cn');

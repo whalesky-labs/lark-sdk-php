@@ -160,9 +160,28 @@ The current implementation includes:
 - PSR-based HTTP request pipeline
 - Response decoding
 - Unified exceptions
+- Generated service/resource accessors for the existing OpenAPI request classes
 - `app_access_token` and `tenant_access_token` API wrappers
+- No token lifecycle management; callers provide and refresh access tokens themselves
 
-More OpenAPI modules will be added step by step.
+Service calls now follow the planned SDK style, for example:
+
+```php
+$client->contact()->user()->get(
+    pathParams: ['user_id' => 'ou_xxx'],
+    accessToken: 'tenant_access_token'
+);
+
+$client->im()->message()->create(
+    query: ['receive_id_type' => 'open_id'],
+    payload: [
+        'receive_id' => 'ou_xxx',
+        'msg_type' => 'text',
+        'content' => '{"text":"hello"}',
+    ],
+    accessToken: 'tenant_access_token'
+);
+```
 
 ## Quick Start
 
@@ -185,7 +204,12 @@ $client = new LarkClient(
     $factory
 );
 
-$result = $client->auth()->tenantAccessToken()->create();
+$token = $client->auth()->tenantAccessToken()->create();
+
+$user = $client->contact()->user()->get(
+    pathParams: ['user_id' => 'ou_xxx'],
+    accessToken: $token['tenant_access_token']
+);
 ```
 
 See `examples/get-tenant-access-token.php` for a runnable example.

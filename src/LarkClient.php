@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Lark;
 
 use Lark\Auth\AuthService;
+use Lark\Concerns\HasServices;
 use Lark\Core\Config;
 use Lark\Core\Http\HttpClient;
 use Lark\Core\Http\RequestBuilder;
@@ -25,6 +26,8 @@ use Psr\Http\Message\StreamFactoryInterface;
 
 final class LarkClient
 {
+    use HasServices;
+
     private readonly HttpClient $httpClient;
 
     public function __construct(
